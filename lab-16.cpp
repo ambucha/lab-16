@@ -19,6 +19,12 @@ class Color {
         int blue;
     // Create public member functions with getters and setters, as well as a print function
     public:
+        // Create three constructors, one default, one partial (lets say jsut red), and one full paramater
+        Color() {red = 0; green = 0; blue = 0;}
+        Color(int r) {red = r; green = 0; blue = 0;}
+        Color(int r, int g, int b){red = r; green = g; blue = b;}
+
+        // setters and getters
         int getRed(){return red;}
         void setRed(int r){red = r;}
         int getGreen() {return green;}
@@ -70,11 +76,19 @@ int main(){
     forestGreen.setGreen(139);
     forestGreen.setBlue(34);
 
+    // Use constructors
+    Color defaultColor;
+    Color red(255);
+    Color lightblue(141, 206, 224);
+
     // Print the colors
     crimson.print();
     gold.print();
     orchid.print();
     forestGreen.print();
+    red.print();
+    lightblue.print();
+    defaultColor.print();
 
     return 0;
 }
